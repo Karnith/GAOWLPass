@@ -1,4 +1,4 @@
-# GAOWLPass - GAOWL with Passport
+# GAOWLPass - GAOWL with Passport (not finished, under development)
 
 [![Dependency Status][dependency-image]][dependency-url] [![MIT License][license-image]][license-url]
 
