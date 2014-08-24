@@ -138,33 +138,33 @@ module.exports = {
         customMiddleware: function (app) {
 
             passport.use(new GitHubStrategy({
-                    clientID: "github app id",
-                    clientSecret: "github app secrete",
-                    callbackURL: "http://localhost1337/auth/github/callback"
+                    clientID: "app id",
+                    clientSecret: "app secret",
+                    callbackURL: "http://localhost/auth/github/callback"
                 },
                 verifyHandler
             ));
 
             passport.use(new FacebookStrategy({
-                    clientID: "facebook app id",
-                    clientSecret: "facebook app secrete",
-                    callbackURL: "http://localhost:1337/auth/facebook/callback"
+                    clientID: "app id",
+                    clientSecret: "app secret",
+                    callbackURL: "http://localhost/auth/facebook/callback"
 
                 },
                 verifyHandler
             ));
 
             passport.use(new GoogleStrategy({
-                    clientID: 'google app id',
-                    clientSecret: 'google app secret',
-                    callbackURL: 'http://localhost:1337/auth/google/callback'
+                    clientID: 'app id',
+                    clientSecret: 'app secret',
+                    callbackURL: 'http://localhost/auth/google/callback'
                 },
                 verifyHandler
             ));
 
             // passport.use(new LdapStrategy({
             // server: {
-            // url: 'ldap://ldap.maintech1.com',
+            // url: 'ldap://ldap.domain.com',
             // adminDn: '',
             // adminPassword: '',
             // searchBase: 'dc=, dc=',
