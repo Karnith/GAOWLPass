@@ -1,5 +1,5 @@
 # GAOWLPass - GAOWL with Passport
-##(not finished, under development)
+##(not finished, under development but working)
 
 [![Dependency Status][dependency-image]][dependency-url] [![MIT License][license-image]][license-url]
 
