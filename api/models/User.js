@@ -13,20 +13,41 @@ module.exports = {
     /* e.g.
     nickname: 'string'
     */
+      provider: {
+          type: 'string'
+      },
+
+      uid: {
+          type: 'integer'
+      },
+
       name: {
           type: 'string',
           required: true
       },
 
-      title: {
+      firstname: {
           type: 'string'
       },
 
+      lastname: {
+          type: 'string'
+      },
+
+      username: {
+          type: 'string'
+      },
+
+      title: {
+          type: 'string',
+          defaultsTo: 'Need a Title?'
+      },
+
        email: {
-       type: 'string',
-       email: true,
-       required: true,
-       unique: true
+           type: 'string',
+           email: true,
+           required: true,
+           unique: true
        },
 
       online: {

@@ -59,7 +59,7 @@ module.exports.connections = {
   mongoServer: {
     adapter: 'sails-mongo',
     url: process.env.DB_URL,
-    database: 'GAOWL'
+    database: 'GAOWLPass'
     //host: 'localhost',
     //port: 27017,
     // user: 'username',

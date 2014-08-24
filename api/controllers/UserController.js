@@ -68,13 +68,18 @@ module.exports = require('waterlock').actions.user({
                         waterlock.logger.debug(err);
                         res.redirect('user/new');
                     }
+                    user.save(function(err, user) {
+                        if(err) {
+                            waterlock.logger.debug(err);
+                            return next(err);
+                        }
+                        user.action = " signed-up and logged-in.";
 
-                    user.action = " signed-up and logged-in.";
+                        User.publishCreate(user);
 
-                    User.publishCreate(user);
-
-                    waterlock.logger.debug('user login success');
-                    return res.redirect('/user/show/'+user.id);
+                        waterlock.logger.debug('user login success');
+                        return res.redirect('/user/show/'+user.id);
+                    });
                 });
             });
     },
@@ -90,6 +95,7 @@ module.exports = require('waterlock').actions.user({
                 waterlock.logger.debug('User not found.');
                 return next();
             }
+            sails.log.warn(user);
             res.view({
                 user: user
             });
