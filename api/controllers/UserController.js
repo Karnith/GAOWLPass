@@ -60,19 +60,19 @@ module.exports = require('waterlock').actions.user({
                     return res.redirect('/user/new');
                 }
                 req.session.user = user;
-
-                user.online = true;
                 req.session.authenticated = true;
                 waterlock.engine.attachAuthToUser(auth, user, function (err) {
                     if (err) {
                         waterlock.logger.debug(err);
                         res.redirect('user/new');
                     }
-                    user.save(function(err, user) {
-                        if(err) {
-                            waterlock.logger.debug(err);
+                    user.online = true;
+                    user.save(function (err, user) {
+                        if (err) {
+                            sailsLog('err', err);
                             return next(err);
                         }
+
                         user.action = " signed-up and logged-in.";
 
                         User.publishCreate(user);
